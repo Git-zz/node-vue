@@ -14,6 +14,16 @@ import AdEdit from './views/AdEdit.vue'
 import AdList from './views/AdList.vue'
 import AdminUserEdit from './views/AdminUserEdit.vue'
 import AdminUserList from './views/AdminUserList.vue'
+import VideoEdit from './views/VideoEdit.vue'
+import VideoList from './views/VideoList.vue'
+import WayEdit from './views/WayEdit.vue'
+import WayList from './views/WayList.vue'
+import RaceEdit from './views/RaceEdit.vue'
+import RaceList from './views/RaceList.vue'
+import GameEdit from './views/GameEdit.vue'
+import GameList from './views/GameList.vue'
+import CommentEdit from './views/CommentEdit.vue'
+import CommentList from './views/CommentList.vue'
 Vue.use(Router)
 
 const router=new Router({
@@ -46,6 +56,26 @@ const router=new Router({
         {path:'/admin_users/create',component: AdminUserEdit},
         {path:'/admin_users/list',component: AdminUserList},
         {path:'/admin_users/edit/:id',component: AdminUserEdit,props:true},
+
+        {path:'/videos/create',component: VideoEdit},
+        {path:'/videos/list',component: VideoList},
+        {path:'/videos/edit/:id',component: VideoEdit,props:true},
+
+        {path:'/ways/create',component: WayEdit},
+        {path:'/ways/list',component: WayList},
+        {path:'/ways/edit/:id',component: WayEdit,props:true},
+
+        {path:'/races/create',component: RaceEdit},
+        {path:'/races/list',component: RaceList},
+        {path:'/races/edit/:id',component: RaceEdit,props:true},
+
+        {path:'/games/create',component: GameEdit},
+        {path:'/games/list',component: GameList},
+        {path:'/games/edit/:id',component: GameEdit,props:true},
+
+        {path:'/comments/create',component: CommentEdit},
+        {path:'/comments/list',component: CommentList},
+        {path:'/comments/edit/:id',component: CommentEdit,props:true},
       ]
     },
     {

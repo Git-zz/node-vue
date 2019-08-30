@@ -2,7 +2,10 @@ const mongoose=require('mongoose')
 const schema=new mongoose.Schema({
     name:{type:String},
     avatar:{type:String},
+    banner:{type:String},
     title:{type:String},
+    show:{type:String},
+    win:{type:String},
     categories:[{type:mongoose.SchemaTypes.ObjectId,ref:'Category'}],
     scores:{
         difficult:{type:Number},
@@ -13,6 +16,8 @@ const schema=new mongoose.Schema({
     skills:[{
         icon:{type:String},
         name:{type:String},
+        delay:{type:String},
+        cost:{type:String},
         description:{type:String},
         tips:{type:String}
     }],
@@ -21,9 +26,15 @@ const schema=new mongoose.Schema({
     usageTips:{type:String},
     battleTips:{type:String},
     teamTips:{type:String},
-    parents:[{
+    partners:[{
         hero:{type:mongoose.SchemaTypes.ObjectId,ref:'Hero'},
         description: {type:String}
+    }],
+    content:[{
+        title:{type:String},
+        cover:{type:String},
+        click:{type:String},
+        body:{type:String},
     }]
 })
-module.exports=mongoose.model('Hero',schema)
+module.exports=mongoose.model('Hero',schema,'heroes')

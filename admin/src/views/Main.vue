@@ -5,9 +5,9 @@
                 <el-submenu index="1">
                     <template slot="title"><i class="el-icon-message"></i>内容管理</template>
                     <el-menu-item-group>
-                        <template slot="title">物品</template>
-                        <el-menu-item index="/items/create">新建物品</el-menu-item>
-                        <el-menu-item index="/items/list">物品列表</el-menu-item>
+                        <template slot="title">装备</template>
+                        <el-menu-item index="/items/create">新建装备</el-menu-item>
+                        <el-menu-item index="/items/list">装备列表</el-menu-item>
                     </el-menu-item-group>
                     <el-menu-item-group>
                         <template slot="title">英雄</template>
@@ -18,6 +18,31 @@
                         <template slot="title">文章</template>
                         <el-menu-item index="/articles/create">新建文章</el-menu-item>
                         <el-menu-item index="/articles/list">文章列表</el-menu-item>
+                    </el-menu-item-group>
+                    <el-menu-item-group>
+                        <template slot="title">视频</template>
+                        <el-menu-item index="/videos/create">新建视频</el-menu-item>
+                        <el-menu-item index="/videos/list">视频列表</el-menu-item>
+                    </el-menu-item-group>
+                    <el-menu-item-group>
+                        <template slot="title">攻略</template>
+                        <el-menu-item index="/ways/create">新建攻略</el-menu-item>
+                        <el-menu-item index="/ways/list">攻略列表</el-menu-item>
+                    </el-menu-item-group>
+                    <el-menu-item-group>
+                        <template slot="title">赛事</template>
+                        <el-menu-item index="/races/create">新建赛事</el-menu-item>
+                        <el-menu-item index="/races/list">赛事列表</el-menu-item>
+                    </el-menu-item-group>
+                    <el-menu-item-group>
+                        <template slot="title">比赛</template>
+                        <el-menu-item index="/games/create">新建比赛</el-menu-item>
+                        <el-menu-item index="/games/list">比赛列表</el-menu-item>
+                    </el-menu-item-group>
+                    <el-menu-item-group>
+                        <template slot="title">评论</template>
+                        <el-menu-item index="/comments/create">新建评论</el-menu-item>
+                        <el-menu-item index="/comments/list">评论列表</el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
 
@@ -49,19 +74,19 @@
 
         <el-container>
             <el-header style="text-align: right; font-size: 12px">
-                <el-dropdown>
-                    <i class="el-icon-setting" style="margin-right: 15px"></i>
-                    <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item>查看</el-dropdown-item>
-                        <el-dropdown-item>新增</el-dropdown-item>
-                        <el-dropdown-item>删除</el-dropdown-item>
-                    </el-dropdown-menu>
-                </el-dropdown>
-                <span>王小虎</span>
+<!--                <el-dropdown>-->
+<!--                    <i class="el-icon-setting" style="margin-right: 15px"></i>-->
+<!--                    <el-dropdown-menu slot="dropdown">-->
+<!--                        <el-dropdown-item>查看</el-dropdown-item>-->
+<!--                        <el-dropdown-item>新增</el-dropdown-item>-->
+<!--                        <el-dropdown-item>删除</el-dropdown-item>-->
+<!--                    </el-dropdown-menu>-->
+<!--                </el-dropdown>-->
+<!--                <span>王小虎</span>-->
             </el-header>
 
             <el-main>
-                <router-view></router-view>
+                <router-view :key="$route.path"></router-view>
 
             </el-main>
         </el-container>
