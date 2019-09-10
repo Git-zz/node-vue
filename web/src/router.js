@@ -12,10 +12,11 @@ import HeroCon from './views/HeroCon'
 import HeroVideo from './views/HeroVideo'
 import Race from './views/Race'
 import GameCon from './views/GameCon'
+import Login from './views/Login'
 
 Vue.use(Router)
 
-export default new Router({
+const router=new Router({
   routes: [
     {
       path: '/',
@@ -42,6 +43,20 @@ export default new Router({
       component:Hero,
       props:true
     },
+    {
+        path:'/login',
+        name:'login',
+        component:Login,
+      meta:{isPublic:true}
+    }
 
   ]
 })
+router.beforeEach((to,from,next)=>{
+  if (!to.meta.isPublic&&!localStorage.token){
+    return next('/login')
+  }
+  next()
+})
+export default router
+

@@ -6,7 +6,7 @@
         <div class="text-white">王者荣耀</div>
         <div class="text-grey-1 fs-xxs">团队成就更多</div>
       </div>
-<!--      <router-link tag="button" to="/login" class="btn" style="background-color: #db9e3f; border: none">登录</router-link>-->
+      <router-link to="/login"><button class="btn text-white" style="background-color: #db9e3f; border: none;">登录</button></router-link>
     </div>
     <div class="pt-3 pb-2" style="background-color: #db9e3f">
       <div class="nav nav-inverse jc-around pb-1" style="cursor: pointer">

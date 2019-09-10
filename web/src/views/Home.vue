@@ -38,7 +38,7 @@
           <router-link tag="div" :to="`/videos/${video._id}`"
                        class="p-2" style="width: 50%;"
                        v-for="(video,i) in category.videoList" :key="i">
-            <img :src="video.cover" class="w-100" style="border-radius: 3px">
+            <img :src="video.cover" class="w-100" style="border-radius: 3px;height: 103.17px;">
             <div class="text-ellipsis-1 fs-lg mt-2">{{video.title}}</div>
             <div class="d-flex jc-between mt-2 text-grey-1 ai-center">
               <span><i class="sprite sprite-video mr-1"></i>{{video.click}}</span>

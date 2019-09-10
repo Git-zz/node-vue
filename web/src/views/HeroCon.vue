@@ -7,10 +7,10 @@
       <p>胜率排名{{model.win}}</p>|
       <router-link tag="p" :to="`/heroes/${model._id}`">查看英雄详细介绍></router-link>
     </div>
-    <div class="mt-2 d-flex flex-wrap jc-between">
+    <div class="mt-2 d-flex jc-between" >
       <router-link tag="div" :to="`/heroVideo/${model._id}`"
                    v-for="item in model.content" :key="item.name" style="text-align: center;">
-          <img :src="item.cover" width="171px" class="mb-1">
+          <img :src="item.cover" width="171px" class="mb-1" height="104.08px">
           <div>{{item.title}}</div>
       </router-link>
     </div>

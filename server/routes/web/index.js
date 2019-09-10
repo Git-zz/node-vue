@@ -9,6 +9,8 @@ module.exports=app=>{
     const Race=mongoose.model('Race')
     const Game=mongoose.model('Game')
     const Comment=require('../../models/Comment')
+    const AdminUser = require('../../models/AdminUser')
+    const jwt=require('jsonwebtoken')
 
     router.post('/comments',async (req,res)=>{
         const model=await Comment.create(req.body)
@@ -297,4 +299,23 @@ module.exports=app=>{
 
 
     app.use('/web/api',router)
+
+    app.post('/web/api/login',async (req,res)=>{
+        const {username,password}=req.body
+        const user=await AdminUser.findOne({username}).select('+password')
+        if (!user){
+            return res.status(422).send({
+                message:'用户不存在'
+            })
+        }
+        const isValid=require('bcrypt').compareSync(password,user.password)
+        if (!isValid){
+            return res.status(422).send({
+                message: '密码错误'
+            })
+        }
+
+        const token=jwt.sign({id:user._id},app.get('secret'))
+        res.send({token})
+    })
 }

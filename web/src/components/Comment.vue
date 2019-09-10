@@ -35,7 +35,8 @@
                 this.model=res.data
             },
             async postComment(){
-                const res=await this.$http.post('comments',{body:this.msg.trim()})
+                let res
+                res=await this.$http.post('comments',{body:this.msg.trim()})
                 const cmt={
                     body: this.msg.trim()
                 }
@@ -60,7 +61,7 @@
         font-size: 14px;
         height: 85px;
         width: 367px;
-        margin: 0 4px;
+        margin: 2px 4px;
         resize: none;
     }
     .cmt-list{

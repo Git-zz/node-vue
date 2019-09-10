@@ -2,12 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import './plugins/element.js'
 import router from './router'
-import axios from 'axios'
-axios.defaults.baseURL='http://localhost:3000/admin/api'
+// import axios from 'axios'
+// axios.defaults.baseURL='http://localhost:3000/admin/api'
 // axios.defaults.headers.post['Content-Type'] = 'application/json'  设置post参数格式
-Vue.prototype.$http=axios
 
 import http from './http'
+Vue.prototype.$http=http
 
 Vue.mixin({
   computed:{

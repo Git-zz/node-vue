@@ -1,7 +1,7 @@
 <template>
   <div class="hero" v-if="model">
     <div class="topbar bg-black py-2 px-3 d-flex ai-center">
-      <img src="../assets/images/logo.png" height="35">
+        <router-link tag="div" to="/" style="border: none"><img src="../assets/images/logo.png" height="35"></router-link>
         <div class="text-white mx-3">王者荣耀</div>
         <div class="text-white ml-2">攻略站</div>
     </div>
@@ -12,13 +12,13 @@
             <div class="fs-sm">{{model.categories.map(v=>v.name).join('/')}}</div>
             <div class="scores d-flex ai-center pt-2" v-if="model.scores">
                 <span>难度</span>
-                <span class="badge bg-primary">{{model.scores.difficult}}</span>
+                <span class="badge1 bg-primary">{{model.scores.difficult}}</span>
                 <span>技能</span>
-                <span class="badge bg-blue-1">{{model.scores.skills}}</span>
+                <span class="badge1 bg-blue-1">{{model.scores.skills}}</span>
                 <span>攻击</span>
-                <span class="badge bg-danger">{{model.scores.attack}}</span>
+                <span class="badge1 bg-danger" style="background-color: #791a15">{{model.scores.attack}}</span>
                 <span>生存</span>
-                <span class="badge bg-dark">{{model.scores.survive}}</span>
+                <span class="badge1 bg-dark">{{model.scores.survive}}</span>
             </div>
         </div>
     </div>
@@ -125,7 +125,7 @@
     .info{
         background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
         .scores{
-            .badge{
+            .badge1{
                 margin: 0 0.25rem;
                 display: inline-block;
                 width: 1rem;

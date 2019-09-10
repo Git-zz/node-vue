@@ -4,7 +4,8 @@ import router from './router'
 
 
 const  http=axios.create({
-    baseURI:'http://localhost:3000/admin/api'
+    baseURL:process.env.VUE_APP_API_URL||'/admin/api'
+    // baseURI:'http://localhost:3000/admin/api'
 })
 axios.interceptors.response.use(res=>{
     return res
