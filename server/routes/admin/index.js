@@ -45,7 +45,7 @@ const router=express.Router({
     const upload=multer({dest:__dirname+'/../../uploads'})
     app.post('/admin/api/upload',authMiddleware(),upload.single('file'),async (req,res)=>{
         const file=req.file
-        file.url=`http://localhost:3000/uploads/${file.filename}`
+        file.url=`http://test.zhu98.top/uploads/${file.filename}`
         res.send(file)
     })
 
